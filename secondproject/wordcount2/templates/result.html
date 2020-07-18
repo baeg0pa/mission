@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>당신이 입력한 텍스트는 {{total}}로 구성되어 있습니다.</h1>
+
+    <div class="going">
+        <a href="{% url 'home' %}"><button type="button" class="btn btn-outline-primary">다시하기</button></a>
+    </div>
+
+    <br>
+    <div class="Result1">
+        <h2>입력한 텍스트</h2>
+        <div class="text1">
+            {{full}}
+            <!-- 입력한 텍스트 -->
+        </div>
+    </div>
+    <div class="Result2">
+        <h2>단어 카운트</h2>
+        <div class="text2">
+            {% for word, count in dictionary %}
+
+            {{word}} : {{count}}
+            <br>
+
+            {%endfor%}
+        </div>
+        <!-- 단어 - 단어가 나온 횟수-->
+    </div>
+</body>
+
+<style>
+    h1 {
+        text-align: center;
+        color: yellow;
+        font-size: 70px;
+    }
+
+
+    .going {
+        text-align: center;
+        padding: 50px;
+    }
+
+    body {
+        background-color: black
+    }
+
+    h2 {
+        color: white;
+        font-size: 50px;
+    }
+
+    .Result1 {
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 50px;
+    }
+
+    .Result2 {
+        color: white;
+        text-align: center;
+        padding: 90px;
+        font-size: 50px;
+    }
+
+    .text1, .text2 {
+        font-size: 20px
+    }
+</style>
+</html>
